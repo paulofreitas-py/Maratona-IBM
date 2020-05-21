@@ -1,0 +1,869 @@
+{
+  "name": "Somelier",
+  "intents": [
+    {
+      "intent": "recomendacaoVinho",
+      "examples": [
+        {
+          "text": "Qual vinho combina mais com carnes de caça?"
+        },
+        {
+          "text": "Qual vinho é adequado para bacalhau?"
+        },
+        {
+          "text": "QUal vinho você recomenda com Carnes vermelhas e massas?"
+        },
+        {
+          "text": "Preciso de um vinho para combinar com peixe."
+        },
+        {
+          "text": "Preciso de um vinho que combine com frutos do mar."
+        },
+        {
+          "text": "Pretendo servir queijo branco como aperitivo. Qual é o vinho que melhor combina com este queijo?"
+        },
+        {
+          "text": "Pretendo servir queijos curados como aperitivo. Qual é o vinho que melhor combina com este queijo?"
+        },
+        {
+          "text": "Eu quero uma sugestão de vinho branco para acompanhar com carne vermelha."
+        },
+        {
+          "text": "O que combina com queijo?"
+        },
+        {
+          "text": "O que combina com carne?"
+        },
+        {
+          "text": "Vou dar um jantar em casa. Qual vinho devo comprar?"
+        },
+        {
+          "text": "Vou servir uma massa no almoço. Qual é o vinho que melhor combina?"
+        },
+        {
+          "text": "Pretendo servir queijo como aperitivo. Qual é o vinho que melhor combina?"
+        },
+        {
+          "text": "Tenho um vinho tinto - que prato preparar?"
+        }
+      ]
+    },
+    {
+      "intent": "recomendacaoPrato",
+      "examples": [
+        {
+          "text": "Tenho um vinho tinto francês Les Violettes. Que prato você sugere que eu devo fazer para acompanhar este vinho?"
+        },
+        {
+          "text": "Tenho um vinho chileno Rosé Céfiro. Que prato eu devo preparar?"
+        },
+        {
+          "text": "Tenho um vinho chileno Branco Chardonnay. Qual refeição combina?"
+        },
+        {
+          "text": "Tenho um vinho Português Branco João Portugal Ramos Alvarinho. Que prato combina?"
+        },
+        {
+          "text": "Tenho um vinho português Branco Alentejano Montado."
+        },
+        {
+          "text": "Tenho um vinho português Branco Dory Colheita. Qual prato devo escolher?"
+        },
+        {
+          "text": "Qual prato combina com um vinho argentino Tinto Cadus Signature Series Petit Verdot."
+        },
+        {
+          "text": "Que refeição vai bem com um vinho tipo tinto da Haut Fourat Bordeaux?"
+        },
+        {
+          "text": "O que combina com vinho tinto?"
+        },
+        {
+          "text": "O que combina com vinho branco?"
+        },
+        {
+          "text": "Tenho um vinho tinto"
+        },
+        {
+          "text": "Tenho um vinho"
+        },
+        {
+          "text": "Que prato preparar?"
+        },
+        {
+          "text": "Que prato combina com o vinho que tenho?"
+        }
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "entity": "tipoQueijo",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "branco",
+          "synonyms": [
+            "queijos brancos",
+            "queijo branco",
+            "brancos"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "curado",
+          "synonyms": [
+            "queijos curados",
+            "queijo curado",
+            "curados"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "tipoPrato",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "carne",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "queijo",
+          "synonyms": []
+        }
+      ]
+    },
+    {
+      "entity": "tipoVinho",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "branco",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "tinto",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "rose",
+          "synonyms": [
+            "rosé"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "vinho",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "vinho chileno rosé céfiro",
+          "synonyms": [
+            "vinho chileno céfiro",
+            "vinho chileno rosé",
+            "vinho rosé céfiro",
+            "chileno rosé céfiro",
+            "Rosé Céfiro"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "vinho português",
+          "synonyms": [
+            "vinho de portugal",
+            "vinho portugues"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "vinho chileno",
+          "synonyms": [
+            "vinho do chile"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "vinho francês tinto château haut fourat bordeaux",
+          "synonyms": [
+            "vinho haut",
+            "vinho francês haut",
+            "vinho francês haut fourat"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "vinho francês tinto les violettes cótes du rhônes-villages",
+          "synonyms": [
+            "vinho les violettes",
+            "vinho francês les violettes"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "vinho argentino tinto cadus signature series petit verdot",
+          "synonyms": [
+            "vinho argentino cadus signature",
+            "vinho tinto cadus signature",
+            "vinho cadus",
+            "vinho argentino cadus"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "vinho português branco dory colheita",
+          "synonyms": [
+            "vinho português dory",
+            "vinho dory colheita",
+            "vinho dory"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "vinho português branco alentejano montado",
+          "synonyms": [
+            "vinho alentejano montado",
+            "vinho alentejano",
+            "vinho branco alentejano montado"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "vinho português branco joão portugal",
+          "synonyms": [
+            "vinho branco joão portugal"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "vinho chileno branco chardonnay",
+          "synonyms": [
+            "branco chardonnay",
+            "vinho chileno chardonnay",
+            "vinho branco chardonnay"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "prato",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "carnes vermelhas e massas",
+          "synonyms": [
+            "carne",
+            "massa",
+            "carninha",
+            "carnes",
+            "carnes vermelhas",
+            "massas"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "peixes e frutos do mar",
+          "synonyms": [
+            "peixinho",
+            "frutos do mar",
+            "peixe",
+            "peixes",
+            "peixes ou frutos do mar"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "queijos brancos",
+          "synonyms": [
+            "queijo branco"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "bacalhau",
+          "synonyms": [
+            "bacalhoada"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "queijos curados",
+          "synonyms": [
+            "queijo curado"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "carnes de caça",
+          "synonyms": [
+            "carne de caca",
+            "carne de caça"
+          ]
+        }
+      ]
+    }
+  ],
+  "language": "pt-br",
+  "metadata": {
+    "api_version": {
+      "major_version": "v1",
+      "minor_version": "2018-09-20"
+    }
+  },
+  "description": "Assistente para diálogos de recomendações de vinhos. Criado para a maratona Behind The Code da IBM.",
+  "dialog_nodes": [
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Vinho Argentino Tinto CADUS Signature Series Petit Verdot Garrafa 750ml (1178431)"
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "node_3_1563059082317",
+      "metadata": {},
+      "conditions": "@tipoVinho:tinto",
+      "dialog_node": "node_16_1563063269368",
+      "previous_sibling": "node_10_1563062972696"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_3_1563059082317",
+      "metadata": {},
+      "variable": "$tipoVinho",
+      "dialog_node": "slot_12_1563062984110",
+      "previous_sibling": "handler_11_1563062984086"
+    },
+    {
+      "type": "event_handler",
+      "parent": "node_3_1563059082317",
+      "metadata": {},
+      "event_name": "focus",
+      "dialog_node": "handler_11_1563062984086",
+      "previous_sibling": "node_17_1563063321527"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Vinho Chileno Rosé Céfiro Garrafa 750ml (1178414)"
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "node_3_1563059082317",
+      "metadata": {},
+      "conditions": "@tipoVinho:rose",
+      "dialog_node": "node_17_1563063321527",
+      "previous_sibling": "node_16_1563063269368"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Vinho Chileno Branco Chardonnay Garrafa 750ml (1178413)"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1563059082317",
+      "metadata": {},
+      "conditions": "@tipoVinho:branco",
+      "dialog_node": "node_10_1563062972696"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": "Qual vinho você vai servir?"
+      },
+      "parent": "slot_23_1563064253632",
+      "event_name": "focus",
+      "dialog_node": "handler_25_1563064253632",
+      "previous_sibling": "handler_24_1563064253632"
+    },
+    {
+      "type": "event_handler",
+      "parent": "slot_23_1563064253632",
+      "context": {
+        "vinho": "@vinho"
+      },
+      "conditions": "@vinho",
+      "event_name": "input",
+      "dialog_node": "handler_24_1563064253632"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Vinho Português Branco DORY COLHEITA Garrafa 750ml (1178409)"
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "node_1_1563055674369",
+      "metadata": {},
+      "conditions": "@prato:bacalhau",
+      "dialog_node": "node_20_1563064076603",
+      "previous_sibling": "node_19_1563063775914"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Vinho Francês Tinto Château HAUT FOURAT Bordeaux Garrafa 750ml (1164670)"
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "node_1_1563055674369",
+      "metadata": {},
+      "conditions": "@prato:(carnes de caça)",
+      "dialog_node": "node_22_1563064118472",
+      "previous_sibling": "node_21_1563064097544"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Vinho Francês Tinto LES VIOLETTES Cótes Du Rhône-Villages Garrafa 750ml (1164669)"
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "node_1_1563055674369",
+      "metadata": {},
+      "conditions": "@prato:(queijos curados)",
+      "dialog_node": "node_21_1563064097544",
+      "previous_sibling": "node_20_1563064076603"
+    },
+    {
+      "type": "slot",
+      "parent": "node_1_1563055674369",
+      "variable": "$prato",
+      "dialog_node": "slot_7_1563062918042",
+      "previous_sibling": "node_3_1563059082317"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": []
+        }
+      },
+      "parent": "node_1_1563055674369",
+      "metadata": {},
+      "next_step": {
+        "behavior": "skip_slot"
+      },
+      "event_name": "generic",
+      "dialog_node": "handler_9_1563057942856",
+      "previous_sibling": "node_22_1563064118472"
+    },
+    {
+      "type": "event_handler",
+      "parent": "node_1_1563055674369",
+      "metadata": {},
+      "event_name": "focus",
+      "dialog_node": "handler_15_1563063047377",
+      "previous_sibling": "handler_9_1563057942856"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": []
+      },
+      "parent": "node_1_1563055674369",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_3_1563059082317"
+      },
+      "conditions": "@prato:(carnes vermelhas e massas)",
+      "dialog_node": "node_3_1563062908817",
+      "previous_sibling": "slot_7_1563062918042"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Vinho Português Branco JOÃO PORTUGAL RAMOS Alvarinho Garrafa 750ml,Brancos (1178407)"
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "node_1_1563055674369",
+      "metadata": {},
+      "conditions": "@prato:(peixes e frutos do mar)",
+      "dialog_node": "node_18_1563063618825",
+      "previous_sibling": "node_3_1563062908817"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Vinho Português Branco ALENTEJANO MONTADO Garrafa 750ml (1178408)"
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "node_1_1563055674369",
+      "metadata": {},
+      "conditions": "@prato:(queijos brancos)",
+      "dialog_node": "node_19_1563063775914",
+      "previous_sibling": "node_18_1563063618825"
+    },
+    {
+      "type": "frame",
+      "title": "Se comida = carnes vermelhas e massas",
+      "output": {},
+      "parent": "node_1_1563055674369",
+      "metadata": {
+        "fallback": "leave",
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "dialog_node": "node_3_1563059082317",
+      "digress_out": "allow_all",
+      "digress_out_slots": "not_allowed"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": "Qual comida você vai preparar junto?"
+      },
+      "parent": "slot_7_1563062918042",
+      "event_name": "focus",
+      "dialog_node": "handler_9_1563062918042",
+      "previous_sibling": "handler_8_1563062918042"
+    },
+    {
+      "type": "event_handler",
+      "parent": "slot_7_1563062918042",
+      "context": {
+        "prato": "@prato"
+      },
+      "conditions": "@prato",
+      "event_name": "input",
+      "dialog_node": "handler_8_1563062918042"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Carnes Vermelhas e massas (1287868)"
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "node_1_1563062821661",
+      "metadata": {},
+      "conditions": "@vinho:(vinho chileno branco chardonnay)",
+      "dialog_node": "node_3_1563064941614",
+      "previous_sibling": "node_2_1563064922966"
+    },
+    {
+      "type": "slot",
+      "parent": "node_1_1563062821661",
+      "variable": "$vinho",
+      "dialog_node": "slot_23_1563064253632",
+      "previous_sibling": "node_7_1563065010408"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Peixes ou frutos do mar (1287871)"
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "node_1_1563062821661",
+      "metadata": {},
+      "conditions": "@vinho:(vinho português branco joão portugal)",
+      "dialog_node": "node_4_1563064954045",
+      "previous_sibling": "node_3_1563064941614"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Carnes Vermelhas e massas (1287868)"
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "node_1_1563062821661",
+      "metadata": {},
+      "conditions": "@vinho:(vinho argentino tinto cadus signature series petit verdot)",
+      "dialog_node": "node_7_1563065010408",
+      "previous_sibling": "node_6_1563064992304"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Bacalhau (1287869)"
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "node_1_1563062821661",
+      "metadata": {},
+      "conditions": "@vinho:(vinho português branco dory colheita)",
+      "dialog_node": "node_6_1563064992304",
+      "previous_sibling": "node_5_1563064973537"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Carnes Vermelhas e massas (1287868)"
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "node_1_1563062821661",
+      "metadata": {},
+      "conditions": "@vinho:(vinho chileno rosé céfiro)",
+      "dialog_node": "node_2_1563064922966",
+      "previous_sibling": "node_1_1563064907248"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Queijos brancos (1287870)"
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "node_1_1563062821661",
+      "metadata": {},
+      "conditions": "@vinho:(vinho português branco alentejano montado)",
+      "dialog_node": "node_5_1563064973537",
+      "previous_sibling": "node_4_1563064954045"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Carnes de Caça (1285678)"
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "node_1_1563062821661",
+      "metadata": {},
+      "conditions": "@vinho:(vinho francês tinto château haut fourat bordeaux)",
+      "dialog_node": "node_1_1563064907248",
+      "previous_sibling": "node_27_1563064838652"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Queijos Curados (1287873)"
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "node_1_1563062821661",
+      "metadata": {},
+      "conditions": "@vinho:(vinho francês tinto les violettes cótes du rhônes-villages)",
+      "dialog_node": "node_27_1563064838652"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": "Qual tipo de vinho você prefere?"
+      },
+      "parent": "slot_12_1563062984110",
+      "event_name": "focus",
+      "dialog_node": "handler_14_1563062984110",
+      "previous_sibling": "handler_13_1563062984110"
+    },
+    {
+      "type": "event_handler",
+      "parent": "slot_12_1563062984110",
+      "context": {
+        "tipoVinho": "@tipoVinho"
+      },
+      "conditions": "@tipoVinho",
+      "event_name": "input",
+      "dialog_node": "handler_13_1563062984110"
+    },
+    {
+      "type": "frame",
+      "title": "Recomendar Comida",
+      "output": {},
+      "metadata": {
+        "fallback": "leave",
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "#recomendacaoPrato",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_1_1563062821661",
+      "digress_out": "allow_all",
+      "previous_sibling": "node_1_1563055674369",
+      "digress_out_slots": "not_allowed"
+    },
+    {
+      "type": "standard",
+      "title": "Em outros casos",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Não consegui entender. Eu sei falar sobre vinhos e pratos que combinam com vinhos. Vamos tentar novamente?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "anything_else",
+      "dialog_node": "Em outros casos",
+      "previous_sibling": "node_1_1563062821661"
+    },
+    {
+      "type": "frame",
+      "title": "Recomendar Vinho",
+      "output": {},
+      "metadata": {
+        "fallback": "leave",
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "#recomendacaoVinho",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_1_1563055674369",
+      "digress_out": "allow_all",
+      "previous_sibling": "Bem-vindo",
+      "digress_out_slots": "not_allowed"
+    },
+    {
+      "type": "standard",
+      "title": "Bem-vindo",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Olá, sou seu Somelier virtual! Posso te ajudar com recomendações de vinhos e pratos, gerando combinações harmônicas e irresistíveis! Vamos tentar?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "welcome",
+      "dialog_node": "Bem-vindo"
+    }
+  ],
+  "workspace_id": "ba4a5263-6e67-4e55-bc47-d569c9b17030",
+  "counterexamples": [],
+  "system_settings": {
+    "tooling": {
+      "store_generic_responses": true
+    }
+  },
+  "learning_opt_out": false,
+  "status": "Available"
+}
